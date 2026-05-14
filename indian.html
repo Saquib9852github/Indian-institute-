@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Indian Typing Institute — आन्दर, सिवान</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;600;700;900&family=Mukta:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--saffron:#FF6B00;--saffron-l:#FF8C3A;--green:#0E8A16;--green-l:#1AAD25;--navy:#071330;--navy2:#0D1F48;--navy3:#162B5E;--gold:#F5C518;--gold2:#FFD94C;--white:#FFF;--off:#F6F8FF;--red:#C0181F;--bg:#EEF2FF;--card:#FFF;--text:#111827;--text2:#4B5563;--border:#E2E8F0;--sh:0 4px 24px rgba(7,19,48,.10);--sh-lg:0 12px 40px rgba(7,19,48,.16);--r:18px;--r-sm:10px}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans Devanagari','Baloo 2',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6}
+body.lang-en{font-family:'Mukta','Baloo 2',sans-serif}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+button{cursor:pointer;font-family:inherit}
+
+/* TRICOLOR */
+.tricolor{height:6px;background:linear-gradient(90deg,var(--saffron) 33.33%,#fff 33.33%,#fff 66.66%,var(--green) 66.66%)}
+
+/* HEADER */
+header{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 60%,#0a3d20 100%);position:sticky;top:0;z-index:9000;box-shadow:0 2px 20px rgba(0,0,0,.35)}
+.h-inner{display:flex;align-items:center;justify-content:space-between;padding:10px 4%;gap:10px;max-width:1200px;margin:0 auto}
+.logo-w{display:flex;align-items:center;gap:11px;flex-shrink:0}
+.logo-c{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#fff 60%,#f5c518 100%);border:2.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 0 14px rgba(245,197,24,.4);flex-shrink:0}
+.logo-t h1{font-family:'Baloo 2',cursive;font-size:clamp(.78rem,2.2vw,1.05rem);color:var(--gold);line-height:1.15;font-weight:900}
+.logo-t .sub{font-size:.55rem;color:#aac;letter-spacing:1.5px;font-weight:600;text-transform:uppercase}
+nav{display:flex;align-items:center;gap:3px;flex-wrap:wrap}
+nav a{color:rgba(255,255,255,.85);font-size:.76rem;font-weight:700;padding:6px 11px;border-radius:30px;transition:all .25s;white-space:nowrap}
+nav a:hover,nav a.active{background:var(--gold);color:var(--navy)}
+.h-right{display:flex;align-items:center;gap:8px}
+.lang-btn{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.25);color:white;padding:7px 13px;border-radius:30px;font-size:.76rem;font-weight:700;transition:all .3s;white-space:nowrap}
+.lang-btn:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.hmbg{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;border-radius:8px}
+.hmbg span{display:block;width:24px;height:2.5px;background:white;border-radius:2px;transition:all .3s}
+.m-nav{display:none;flex-direction:column;background:var(--navy2);padding:10px 4% 16px;border-top:1px solid rgba(255,255,255,.1);gap:3px}
+.m-nav.open{display:flex}
+.m-nav a{color:white;font-size:.88rem;font-weight:700;padding:11px 16px;border-radius:var(--r-sm);transition:all .2s;border-left:3px solid transparent}
+.m-nav a:hover{background:rgba(245,197,24,.15);border-left-color:var(--gold);color:var(--gold)}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 45%,#0a3d20 100%);padding:clamp(40px,8vw,90px) 5% clamp(50px,8vw,100px);position:relative;overflow:hidden;min-height:88vh;display:flex;align-items:center}
+.hero-decor{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hero-decor::before{content:'';position:absolute;right:-10%;top:10%;width:55vw;max-width:600px;height:55vw;max-height:600px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,0,.12) 0%,transparent 70%)}
+.hero-decor::after{content:'';position:absolute;left:-5%;bottom:-5%;width:40vw;max-width:400px;height:40vw;max-height:400px;border-radius:50%;background:radial-gradient(circle,rgba(14,138,22,.12) 0%,transparent 70%)}
+.hero-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(245,197,24,.12);border:1.5px solid rgba(245,197,24,.4);padding:6px 15px;border-radius:30px;margin-bottom:18px}
+.hero-badge span{color:var(--gold);font-size:.72rem;font-weight:700;letter-spacing:1px}
+.hero h2{font-family:'Baloo 2',cursive;font-size:clamp(1.9rem,6vw,3.8rem);color:white;line-height:1.12;margin-bottom:12px;font-weight:900}
+.t-sf{color:var(--saffron-l)}.t-gn{color:#5dfa72}.t-gd{color:var(--gold2)}
+.hero-sub{color:rgba(200,215,255,.82);font-size:clamp(.88rem,2vw,1.05rem);max-width:520px;line-height:1.75;margin-bottom:28px}
+.hero-stats{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:30px}
+.stat-n{font-family:'Baloo 2',cursive;font-size:clamp(1.5rem,4vw,2.2rem);color:var(--gold);font-weight:900;line-height:1}
+.stat-l{color:rgba(180,200,255,.7);font-size:.65rem;font-weight:700;letter-spacing:1px;margin-top:3px}
+.hero-btns{display:flex;gap:13px;flex-wrap:wrap}
+.btn-gl{padding:14px 28px;border-radius:30px;font-size:.88rem;font-weight:800;border:none;display:inline-flex;align-items:center;gap:8px;transition:all .3s;letter-spacing:.3px;white-space:nowrap}
+.btn-or{background:linear-gradient(135deg,var(--saffron),#e65c00);color:white;box-shadow:0 6px 22px rgba(255,107,0,.45)}
+.btn-or:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(255,107,0,.6)}
+.btn-ol{background:transparent;color:white;border:2px solid rgba(255,255,255,.35)}
+.btn-ol:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.hcards{display:flex;flex-direction:column;gap:14px}
+.hc{background:rgba(255,255,255,.07);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:18px 22px;text-align:center;color:white;min-width:140px;animation:hcf 3.5s ease-in-out infinite alternate}
+.hc:nth-child(2){animation-delay:.6s}.hc:nth-child(3){animation-delay:1.2s}
+.hc .e{font-size:2rem;margin-bottom:5px}.hc .l{font-size:.7rem;font-weight:700;color:var(--gold2);letter-spacing:.8px}
+@keyframes hcf{from{transform:translateY(0)}to{transform:translateY(-12px)}}
+
+/* MARQUEE */
+.marq-wrap{background:linear-gradient(90deg,var(--red),var(--saffron));padding:11px 0;overflow:hidden}
+.marq-track{display:flex;gap:45px;animation:mq 22s linear infinite;width:max-content}
+.marq-track span{color:white;font-weight:700;font-size:.85rem;letter-spacing:.5px;white-space:nowrap;flex-shrink:0}
+@keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* SECTIONS */
+.sec{padding:clamp(50px,8vw,90px) 5%}
+.sec-hd{text-align:center;margin-bottom:clamp(32px,5vw,55px)}
+.sec-hd h2{font-family:'Baloo 2',cursive;font-size:clamp(1.6rem,4.5vw,2.6rem);font-weight:900;color:var(--navy);line-height:1.15}
+.sec-hd h2 span{color:var(--saffron)}
+.sec-hd p{color:var(--text2);margin-top:8px;font-size:.92rem}
+.sec-line{width:55px;height:4px;border-radius:3px;background:linear-gradient(90deg,var(--saffron),var(--green));margin:14px auto 0}
+
+/* COURSES */
+.c-bg{background:white}
+.c-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:22px;max-width:1200px;margin:0 auto}
+.cc{border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);border:1px solid var(--border);background:var(--card);transition:all .32s;display:flex;flex-direction:column}
+.cc:hover{transform:translateY(-7px);box-shadow:var(--sh-lg)}
+.cc-h{padding:22px 22px 14px;position:relative}
+.cc-ic{font-size:2.4rem;margin-bottom:9px;display:block}
+.cc-badge{position:absolute;top:14px;right:14px;font-size:.6rem;font-weight:800;padding:4px 10px;border-radius:20px;letter-spacing:.8px;color:white}
+.cc-nm{font-weight:800;font-size:1.05rem;color:var(--navy);margin-bottom:3px}
+.cc-sb{color:var(--text2);font-size:.78rem}
+.cc-bd{padding:0 22px 14px;flex:1}
+.cc-ft{list-style:none;margin-top:10px}
+.cc-ft li{display:flex;align-items:flex-start;gap:8px;font-size:.8rem;color:#555;padding:4px 0}
+.cc-ft li::before{content:'✓';color:var(--green);font-weight:900;font-size:.85rem;margin-top:1px;flex-shrink:0}
+.cc-fo{padding:14px 22px 20px;border-top:1px solid #f0f0f0;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.cc-fee{font-family:'Baloo 2',cursive;font-size:1.5rem;font-weight:900;color:var(--green);line-height:1}
+.cc-fee small{display:block;font-family:inherit;font-size:.65rem;color:#aaa;font-weight:400}
+.cc-acts{display:flex;gap:7px}
+.btn-en{background:linear-gradient(135deg,var(--navy),var(--navy3));color:white;padding:9px 16px;border-radius:25px;font-size:.77rem;font-weight:800;border:none;transition:all .25s;white-space:nowrap}
+.btn-en:hover{background:linear-gradient(135deg,var(--saffron),#e65c00);transform:scale(1.04)}
+.btn-dc{background:#fee2e2;color:#dc2626;border:none;padding:9px 11px;border-radius:25px;font-size:.75rem;font-weight:700;display:none}
+.admin-mode .btn-dc{display:block}
+
+/* ABOUT */
+.ab-bg{background:linear-gradient(135deg,#f8faff 0%,#fff5ee 100%)}
+.ab-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:50px;align-items:center;max-width:1100px;margin:0 auto}
+.ab-vis{position:relative;display:flex;justify-content:center}
+.ab-card{background:white;border-radius:24px;padding:40px 30px;text-align:center;box-shadow:var(--sh-lg);max-width:320px;width:100%}
+.ab-card .be{font-size:5.5rem;display:block;margin-bottom:12px}
+.ab-card h3{font-family:'Baloo 2',cursive;font-size:1.1rem;color:var(--navy);font-weight:900}
+.ab-card p{font-size:.75rem;color:#888;margin-top:4px}
+.ab-ac{position:absolute;bottom:-16px;right:-10px;background:linear-gradient(135deg,var(--saffron),#c94e00);color:white;padding:13px 16px;border-radius:14px;font-size:.78rem;font-weight:800;box-shadow:0 6px 18px rgba(255,107,0,.35);text-align:center}
+.ab-tx h3{font-family:'Baloo 2',cursive;font-size:clamp(1.4rem,3vw,1.9rem);font-weight:900;color:var(--navy);margin-bottom:14px}
+.ab-tx p{color:var(--text2);line-height:1.85;margin-bottom:12px;font-size:.92rem}
+.ab-feats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.af{background:white;border-radius:12px;padding:13px 14px;display:flex;align-items:center;gap:10px;box-shadow:0 3px 12px rgba(0,0,0,.06);border-left:3px solid var(--saffron)}
+.af .e{font-size:1.4rem;flex-shrink:0}
+.af p{font-size:.78rem;font-weight:700;color:var(--navy)}
+
+/* UPDATES */
+.up-bg{background:var(--off)}
+.up-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:18px;max-width:1200px;margin:0 auto}
+.uc{background:white;border-radius:var(--r);padding:22px;box-shadow:var(--sh);border-top:4px solid var(--saffron);transition:all .28s;position:relative}
+.uc:hover{transform:translateY(-5px);box-shadow:var(--sh-lg)}
+.u-tag{display:inline-block;padding:4px 11px;border-radius:20px;font-size:.62rem;font-weight:800;letter-spacing:.8px;margin-bottom:10px;background:var(--saffron);color:white}
+.u-ti{font-weight:800;font-size:.96rem;color:var(--navy);margin-bottom:7px}
+.u-de{color:var(--text2);font-size:.82rem;line-height:1.65}
+.u-dt{font-size:.68rem;color:#bbb;margin-top:11px}
+.btn-du{position:absolute;top:10px;right:10px;background:#fee2e2;color:#dc2626;border:none;padding:5px 9px;border-radius:8px;font-size:.68rem;font-weight:700;display:none;cursor:pointer}
+.admin-mode .btn-du{display:block}
+.add-nb{display:flex;align-items:center;gap:9px;justify-content:center;background:linear-gradient(135deg,var(--green),#0a6b10);color:white;padding:14px 32px;border-radius:30px;font-weight:800;font-size:.88rem;border:none;box-shadow:0 6px 20px rgba(14,138,22,.3);margin:28px auto 0;transition:all .3s;cursor:pointer}
+.add-nb:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(14,138,22,.4)}
+
+/* ENQUIRY */
+.eq-bg{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 50%,#082a14 100%)}
+.eq-bg .sec-hd h2{color:white}
+.eq-bg .sec-hd p{color:rgba(170,195,255,.8)}
+.eq-wrap{max-width:640px;margin:0 auto;background:rgba(255,255,255,.07);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:clamp(24px,5vw,42px)}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fg{margin-bottom:16px}
+.fg label{display:block;color:rgba(200,220,255,.85);font-size:.78rem;font-weight:700;margin-bottom:6px;letter-spacing:.4px}
+.fg input,.fg select,.fg textarea{width:100%;padding:12px 16px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.14);border-radius:var(--r-sm);color:white;font-size:.88rem;font-family:inherit;outline:none;transition:all .25s;-webkit-appearance:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold);background:rgba(255,255,255,.13);box-shadow:0 0 0 3px rgba(245,197,24,.18)}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(150,170,220,.6)}
+.fg select option{background:#0D1F48;color:white}
+.wa-sub{width:100%;padding:16px;background:linear-gradient(135deg,#25D366,#128C7E);color:white;font-size:1rem;font-weight:800;border:none;border-radius:30px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 6px 22px rgba(37,211,102,.32);transition:all .3s;margin-top:8px}
+.wa-sub:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(37,211,102,.5)}
+.eq-note{text-align:center;color:rgba(140,160,210,.7);font-size:.73rem;margin-top:12px}
+.eq-note strong{color:var(--gold2)}
+
+/* CONTACT */
+.co-bg{background:white}
+.co-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:18px;max-width:1000px;margin:0 auto}
+.con-c{background:var(--off);border-radius:var(--r);padding:26px 20px;text-align:center;border:1px solid var(--border);transition:all .28s}
+.con-c:hover{transform:translateY(-5px);box-shadow:var(--sh-lg);background:white}
+.con-i{font-size:2.6rem;margin-bottom:10px}
+.con-c h4{font-weight:800;font-size:.9rem;color:var(--navy);margin-bottom:5px}
+.con-c p,.con-c a{color:var(--text2);font-size:.82rem}
+.con-c a{color:var(--saffron);font-weight:700}
+
+/* FOOTER */
+footer{background:var(--navy);color:rgba(170,190,230,.7);text-align:center;padding:30px 5%}
+.f-logo{font-family:'Baloo 2',cursive;font-size:1.4rem;color:var(--gold);margin-bottom:8px;font-weight:900}
+footer p{font-size:.78rem;margin:4px 0}
+footer a{color:var(--gold)}
+.f-copy{font-size:.68rem;color:rgba(120,140,180,.6);margin-top:14px}
+
+/* ADMIN FAB */
+.admin-fab{position:fixed;bottom:80px;right:0;background:linear-gradient(135deg,var(--navy),var(--navy3));color:var(--gold);border:none;padding:12px 9px;border-radius:12px 0 0 12px;font-size:.65rem;font-weight:800;letter-spacing:1.5px;writing-mode:vertical-lr;z-index:8000;box-shadow:-3px 0 14px rgba(0,0,0,.22);cursor:pointer;transition:all .3s}
+.admin-fab:hover{background:linear-gradient(135deg,var(--saffron),#c94e00);color:white}
+
+/* DRAWER */
+.drawer{position:fixed;top:0;right:-340px;height:100%;width:320px;max-width:90vw;background:white;z-index:9500;box-shadow:-5px 0 30px rgba(0,0,0,.22);transition:right .38s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;border-radius:16px 0 0 16px;overflow:hidden}
+.drawer.open{right:0}
+.d-hd{background:linear-gradient(135deg,var(--navy),var(--navy3));padding:18px 20px;display:flex;align-items:center;justify-content:space-between}
+.d-hd h3{font-family:'Baloo 2',cursive;color:var(--gold);font-size:1rem;font-weight:900}
+.d-cls{background:rgba(255,255,255,.15);border:none;color:white;width:30px;height:30px;border-radius:50%;font-size:1rem;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.d-body{flex:1;overflow-y:auto;padding:18px}
+.d-body::-webkit-scrollbar{width:4px}
+.d-body::-webkit-scrollbar-thumb{background:#ddd;border-radius:2px}
+.d-sec{margin-bottom:22px}
+.d-sec h4{font-size:.8rem;font-weight:800;color:var(--navy);margin-bottom:11px;padding-bottom:7px;border-bottom:2px solid var(--saffron)}
+.df{margin-bottom:9px}
+.df label{display:block;font-size:.7rem;font-weight:700;color:#555;margin-bottom:4px}
+.df input,.df textarea,.df select{width:100%;padding:9px 12px;border:1.5px solid #dde;border-radius:9px;font-size:.8rem;font-family:inherit;outline:none;background:#f8f9ff}
+.df input:focus,.df textarea:focus{border-color:var(--saffron)}
+.d-btn{width:100%;padding:11px;border:none;border-radius:10px;font-weight:800;font-size:.82rem;cursor:pointer;transition:all .25s}
+.d-grn{background:linear-gradient(135deg,var(--green),#0a6b10);color:white;box-shadow:0 4px 12px rgba(14,138,22,.25)}
+.d-grn:hover{opacity:.9}
+.d-red{background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;margin-top:8px}
+.d-login{padding:22px 18px}
+.d-login h3{font-family:'Baloo 2',cursive;color:var(--navy);font-size:1.1rem;font-weight:900;margin-bottom:16px}
+
+/* TOAST */
+.toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--green);color:white;padding:12px 26px;border-radius:30px;font-weight:700;font-size:.82rem;box-shadow:0 5px 20px rgba(0,0,0,.2);z-index:99999;transition:transform .38s ease;white-space:nowrap;max-width:90vw;text-align:center}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+/* SCROLL FADE */
+.sf{opacity:0;transform:translateY(28px);transition:opacity .6s,transform .6s}
+.sf.in{opacity:1;transform:translateY(0)}
+
+/* MOBILE */
+@media(max-width:860px){
+  nav{display:none}
+  .hmbg{display:flex}
+  .hero-grid{grid-template-columns:1fr}
+  .hcards{display:none}
+  .hero{min-height:auto}
+  .ab-grid{grid-template-columns:1fr}
+  .ab-vis{margin-bottom:20px}
+  .ab-ac{bottom:-10px;right:0}
+  .f-row{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .hero h2{font-size:1.7rem}
+  .btn-gl{padding:12px 20px;font-size:.82rem}
+  .eq-wrap{padding:20px 16px}
+  .h-inner{padding:8px 4%}
+  .logo-c{width:42px;height:42px;font-size:1.3rem}
+  .logo-t h1{font-size:.76rem}
+  .drawer{width:100%;max-width:100vw;border-radius:16px 16px 0 0;top:auto;bottom:-100%;height:88vh;transition:bottom .38s;right:0}
+  .drawer.open{bottom:0;right:0}
+}
+</style>
+</head>
+<body>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- ADMIN FAB -->
+<button class="admin-fab" onclick="dToggle()">⚙ ADMIN</button>
+
+<!-- ADMIN DRAWER -->
+<div class="drawer" id="drawer">
+  <div class="d-hd">
+    <h3>⚙ Admin Panel</h3>
+    <button class="d-cls" onclick="dToggle()">✕</button>
+  </div>
+  <div id="dLogin">
+    <div class="d-login">
+      <h3>🔐 Admin Login</h3>
+      <div class="df"><label>Password</label><input type="password" id="dPass" placeholder="Enter password"></div>
+      <button class="d-btn d-grn" onclick="aLogin()" style="margin-top:10px">Login</button>
+    </div>
+  </div>
+  <div id="dDash" style="display:none">
+    <div class="d-body">
+      <div class="d-sec">
+        <h4>📢 Add Notice / Update</h4>
+        <div class="df"><label>Title (Hindi)</label><input type="text" id="dUThi" placeholder="Hindi title..."></div>
+        <div class="df"><label>Title (English)</label><input type="text" id="dUTen" placeholder="English title..."></div>
+        <div class="df"><label>Desc (Hindi)</label><textarea id="dUDhi" rows="2" placeholder="हिंदी विवरण..."></textarea></div>
+        <div class="df"><label>Desc (English)</label><textarea id="dUDen" rows="2" placeholder="English description..."></textarea></div>
+        <div class="df"><label>Tag</label>
+          <select id="dUTag">
+            <option>📢 NOTICE</option><option>🎓 NEW BATCH</option>
+            <option>🏆 RESULT</option><option>🎉 OFFER</option><option>💡 TIP</option>
+          </select>
+        </div>
+        <button class="d-btn d-grn" onclick="addUpdate()">➕ Add Update</button>
+      </div>
+      <div class="d-sec">
+        <h4>📚 Add Course</h4>
+        <div class="df"><label>Course Name</label><input type="text" id="dCN" placeholder="e.g. CCC"></div>
+        <div class="df"><label>Subtitle</label><input type="text" id="dCS" placeholder="Full form..."></div>
+        <div class="df"><label>Fee (₹)</label><input type="number" id="dCF" placeholder="e.g. 4000"></div>
+        <div class="df"><label>Duration</label><input type="text" id="dCD" placeholder="e.g. 3 Months"></div>
+        <div class="df"><label>Icon</label><input type="text" id="dCI" value="💻"></div>
+        <button class="d-btn d-grn" onclick="addCourse()">➕ Add Course</button>
+      </div>
+      <div class="d-sec">
+        <h4>📞 Update Contact</h4>
+        <div class="df"><label>Phone</label><input type="text" id="dPh" value="8809723830"></div>
+        <div class="df"><label>Email</label><input type="text" id="dEm" value="indiantyping4246@gmail.com"></div>
+        <div class="df"><label>Address</label><input type="text" id="dAd" value="गैस एजेंसी, आन्दर (सिवान)"></div>
+        <button class="d-btn d-grn" onclick="updContact()">💾 Save Contact</button>
+      </div>
+      <button class="d-btn d-red" onclick="aLogout()">🚪 Logout</button>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="tricolor"></div>
+  <div class="h-inner">
+    <div class="logo-w">
+      <div class="logo-c">🎓</div>
+      <div class="logo-t">
+        <h1>Indian Typing Institute</h1>
+        <div class="sub">REG. NO: 25988 • GOVT. RECOGNIZED</div>
+      </div>
+    </div>
+    <nav id="dNav">
+      <a href="#home" class="active" onclick="goTo('#home')" id="n-home">होम</a>
+      <a href="#courses" onclick="goTo('#courses')" id="n-courses">Courses</a>
+      <a href="#about" onclick="goTo('#about')" id="n-about">हमारे बारे में</a>
+      <a href="#updates" onclick="goTo('#updates')" id="n-updates">Updates</a>
+      <a href="#enquiry" onclick="goTo('#enquiry')" id="n-enquiry">Enquiry</a>
+      <a href="#contact" onclick="goTo('#contact')" id="n-contact">Contact</a>
+    </nav>
+    <div class="h-right">
+      <button class="lang-btn" onclick="toggleLang()" id="langBtn">
+        <span id="lFlag">🇬🇧</span> <span id="lLabel">English</span>
+      </button>
+      <button class="hmbg" id="hmbg" onclick="toggleMob()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="m-nav" id="mNav">
+    <a href="#home" onclick="goTo('#home')" id="mn-home">🏠 होम</a>
+    <a href="#courses" onclick="goTo('#courses')" id="mn-courses">📚 Courses</a>
+    <a href="#about" onclick="goTo('#about')" id="mn-about">ℹ️ हमारे बारे में</a>
+    <a href="#updates" onclick="goTo('#updates')" id="mn-updates">📢 Updates</a>
+    <a href="#enquiry" onclick="goTo('#enquiry')" id="mn-enquiry">📝 Enquiry</a>
+    <a href="#contact" onclick="goTo('#contact')" id="mn-contact">📞 Contact</a>
+    <button class="lang-btn" onclick="toggleLang()" style="border:none;align-self:flex-start;margin-top:6px">
+      <span id="lFlagM">🇬🇧</span> <span id="lLabelM">English</span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home">
+<div class="hero">
+  <div class="hero-decor"></div>
+  <div class="hero-grid">
+    <div>
+      <div class="hero-badge"><span>⭐</span><span id="hBadge">भारत सरकार द्वारा मान्यता प्राप्त</span></div>
+      <h2 id="heroH2">
+        <span class="t-sf">भारत का</span><br>
+        <span class="t-gd">सर्वश्रेष्ठ</span> <span class="t-gn">Computer</span><br>
+        Typing Institute
+      </h2>
+      <p class="hero-sub" id="heroSub">आन्दर में पहली बार AI का कोर्स! Skill ही असली Degree है। आन्दर के Best Trainer Seraj Sir से Computer सीखें और अपना भविष्य बनाएं।</p>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-n">7+</div><div class="stat-l" id="sl1">साल का अनुभव</div></div>
+        <div class="stat"><div class="stat-n">500+</div><div class="stat-l" id="sl2">Students</div></div>
+        <div class="stat"><div class="stat-n">6+</div><div class="stat-l" id="sl3">Courses</div></div>
+      </div>
+      <div class="hero-btns">
+        <button class="btn-gl btn-or" onclick="goTo('#enquiry')" id="hBtn1">📝 Admission लें</button>
+        <button class="btn-gl btn-ol" onclick="goTo('#courses')" id="hBtn2">📚 Courses देखें</button>
+      </div>
+    </div>
+    <div class="hcards">
+      <div class="hc"><div class="e">🏆</div><div class="l">GOVT. RECOGNIZED</div></div>
+      <div class="hc"><div class="e">🤖</div><div class="l">AI COURSE</div></div>
+      <div class="hc"><div class="e">💼</div><div class="l">JOB PLACEMENT</div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marq-wrap"><div class="marq-track" id="marqT"></div></div>
+
+<!-- COURSES -->
+<section id="courses" class="sec c-bg">
+  <div class="sec-hd sf">
+    <h2><span id="cHead1">हमारे</span> <span id="cHead2">Courses</span></h2>
+    <p id="cSub">Professional courses with certificates | Reg. No: 25988</p>
+    <div class="sec-line"></div>
+  </div>
+  <div class="c-grid" id="cGrid"></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="sec ab-bg">
+  <div class="sec-hd sf">
+    <h2 id="abH2">हमारे <span>बारे में</span></h2>
+    <p id="abSub">Seraj Sir और Indian Typing Institute की कहानी</p>
+    <div class="sec-line"></div>
+  </div>
+  <div class="ab-grid">
+    <div class="ab-vis sf">
+      <div class="ab-card">
+        <span class="be">🎓</span>
+        <h3>Indian Typing Institute</h3>
+        <p>Reg. No: 25988</p>
+        <div style="margin-top:16px;display:flex;justify-content:center;gap:6px;flex-wrap:wrap">
+          <span style="background:#fff5ee;color:var(--saffron);padding:5px 12px;border-radius:20px;font-size:.72rem;font-weight:800">⭐ Govt. Approved</span>
+          <span style="background:#f0fff4;color:var(--green);padding:5px 12px;border-radius:20px;font-size:.72rem;font-weight:800">✅ Certified</span>
+        </div>
+      </div>
+      <div class="ab-ac">👨‍🏫 Seraj Sir<br><span style="font-size:.7rem;opacity:.85" id="abAcTxt">7 साल का अनुभव</span></div>
+    </div>
+    <div class="ab-tx sf">
+      <h3 id="abTH">जानें हमारे बारे में</h3>
+      <p id="abP1"><strong>Indian Typing Institute</strong> — भारत सरकार द्वारा मान्यता प्राप्त संस्था है, जिसका Reg. No. <strong>25988</strong> है।</p>
+      <p id="abP2">हमारे Institute में आन्दर के Best Trainer <strong>Seraj Sir</strong> (7 Years Experience) से Computer की पूरी training मिलती है। किताबों से डिग्री मिलेगी, Computer से Job!</p>
+      <p id="abP3">हमारी कोशिश आपको बेहतर देने के साथ, बेहतरीन बनाना भी है। <strong>कम्प्यूटर ही भविष्य है।</strong></p>
+      <div class="ab-feats">
+        <div class="af"><span class="e">🏛</span><p id="af1">Govt. Recognized</p></div>
+        <div class="af"><span class="e">👨‍🏫</span><p id="af2">Expert Trainer</p></div>
+        <div class="af"><span class="e">📜</span><p id="af3">Valid Certificate</p></div>
+        <div class="af"><span class="e">💼</span><p id="af4">Job Assistance</p></div>
+        <div class="af"><span class="e">🤖</span><p id="af5">AI Course Available</p></div>
+        <div class="af"><span class="e">🕐</span><p id="af6">Flexible Timing</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UPDATES -->
+<section id="updates" class="sec up-bg">
+  <div class="sec-hd sf">
+    <h2><span id="upH1">Latest</span> <span id="upH2">Updates</span></h2>
+    <p id="upSub">Important notices & announcements</p>
+    <div class="sec-line"></div>
+  </div>
+  <div class="up-grid" id="uGrid"></div>
+  <button class="add-nb" onclick="goTo('#enquiry')" id="addNB">📩 Enquiry करें / More Info</button>
+</section>
+
+<!-- ENQUIRY -->
+<section id="enquiry" class="sec eq-bg">
+  <div class="sec-hd sf">
+    <h2>📝 <span id="eqH1">Enquiry</span> <span id="eqH2">करें</span></h2>
+    <p id="eqSub">हमें WhatsApp पर directly enquiry करें — तुरंत reply!</p>
+    <div class="sec-line"></div>
+  </div>
+  <div class="eq-wrap sf">
+    <div class="f-row">
+      <div class="fg"><label id="lbName">👤 आपका नाम *</label><input type="text" id="eqName" placeholder="Full Name"></div>
+      <div class="fg"><label id="lbPhone">📱 Mobile Number *</label><input type="tel" id="eqPhone" placeholder="10 digit number" maxlength="10"></div>
+    </div>
+    <div class="fg"><label id="lbCourse">📚 Course चुनें *</label>
+      <select id="eqCourse">
+        <option value="" id="eqOpt0">-- Course Select करें --</option>
+        <option>ADCA</option><option>DCA</option><option>DTP</option>
+        <option>AI Course</option><option>Tally Prime</option><option>Typing</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="fg"><label id="lbMsg">📝 Message / सवाल</label><textarea id="eqMsg" rows="3" placeholder="अपना सवाल यहाँ लिखें..."></textarea></div>
+    <button class="wa-sub" onclick="sendWA()">
+      <span style="font-size:1.3rem">💬</span>
+      <span id="waBtnTxt">WhatsApp पर Enquiry भेजें</span>
+    </button>
+    <p class="eq-note" id="eqNote">आपकी enquiry सीधे <strong>Seraj Sir</strong> के WhatsApp पर जाएगी</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="sec co-bg">
+  <div class="sec-hd sf">
+    <h2><span id="coH1">संपर्क</span> <span id="coH2">करें</span></h2>
+    <p id="coSub">हम आपकी सहायता के लिए हमेशा उपलब्ध हैं</p>
+    <div class="sec-line"></div>
+  </div>
+  <div class="co-grid">
+    <div class="con-c sf"><div class="con-i">📞</div><h4 id="coC1H">Call / WhatsApp</h4><p><a id="cPhone" href="tel:8809723830">8809723830</a></p><p style="font-size:.72rem;color:#bbb;margin-top:4px">Seraj Sir</p></div>
+    <div class="con-c sf"><div class="con-i">📧</div><h4>Email</h4><p><a id="cEmail" href="mailto:indiantyping4246@gmail.com" style="word-break:break-all">indiantyping4246@gmail.com</a></p></div>
+    <div class="con-c sf"><div class="con-i">📍</div><h4 id="coC3H">पता</h4><p id="cAddr">गैस एजेंसी, आन्दर (सिवान)</p></div>
+    <div class="con-c sf"><div class="con-i">🕐</div><h4 id="coC4H">समय</h4><p id="coTiming">सोम – शनि: सुबह 9 बजे – शाम 7 बजे</p></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-logo">🎓 Indian Typing Institute</div>
+  <p>Reg. No: 25988 | <span id="ftGov">भारत सरकार द्वारा मान्यता प्राप्त</span></p>
+  <p id="ftAddr">गैस एजेंसी, आन्दर (सिवान) | <a href="tel:8809723830">8809723830</a></p>
+  <div class="f-copy">© 2025 Indian Typing Institute. All rights reserved.</div>
+  <div class="tricolor" style="margin-top:20px;border-radius:3px"></div>
+</footer>
+
+<script>
+const WA='918809723830', PASS='iti@2025';
+let lang='hi', isAdmin=false;
+
+let courses=[
+  {name:'ADCA',sub:'Advance Diploma in Computer Applications',fee:8000,dur:'12 Months',icon:'🖥️',badge:'Popular'},
+  {name:'DCA',sub:'Diploma in Computer Applications',fee:5000,dur:'6 Months',icon:'💻',badge:'Best Value'},
+  {name:'DTP',sub:'Desktop Publishing',fee:4000,dur:'3 Months',icon:'🖨️',badge:''},
+  {name:'AI Course',sub:'Artificial Intelligence — First in Aander!',fee:6000,dur:'4 Months',icon:'🤖',badge:'NEW'},
+  {name:'Tally Prime',sub:'Accounting & Finance Software',fee:4500,dur:'3 Months',icon:'📊',badge:''},
+  {name:'Typing',sub:'Hindi & English Typing',fee:2000,dur:'2 Months',icon:'⌨️',badge:''},
+];
+
+let updates=[
+  {title:{hi:'Admission Open — नया Batch!',en:'Admission Open — New Batch!'},desc:{hi:'June 2025 batch के लिए admission शुरू। जल्दी करें, सीटें सीमित!',en:'Admissions open for June 2025 batch. Hurry, limited seats!'},tag:'🎓 NEW BATCH',date:'May 2025'},
+  {title:{hi:'AI Course लॉन्च!',en:'AI Course Launched!'},desc:{hi:'आन्दर में पहली बार AI का कोर्स शुरू। अभी join करें।',en:'First ever AI Course in Aander is now live. Join today!'},tag:'🤖 NEW',date:'May 2025'},
+  {title:{hi:'Results घोषित',en:'Results Declared'},desc:{hi:'March 2025 batch के सभी students के result घोषित। बधाई!',en:'Results declared for all March 2025 batch students. Congratulations!'},tag:'🏆 RESULT',date:'Apr 2025'},
+  {title:{hi:'Special Offer 20% Off!',en:'Special Offer — 20% Off!'},desc:{hi:'DCA + Typing combo में 20% discount — सिर्फ इस महीने!',en:'20% discount on DCA + Typing combo — this month only!'},tag:'🎉 OFFER',date:'May 2025'},
+];
+
+const cols=['#FF6B00','#0E8A16','#000080','#C0181F','#7C3AED','#0891b2'];
+
+/* MARQUEE */
+const marqItems={
+  hi:['🎓 ADCA Course','💻 DCA Course','🖨 DTP Course','🤖 AI Course — आन्दर में पहली बार!','📊 Tally Prime','⌨ Typing Course','📞 Admission Open: 8809723830'],
+  en:['🎓 ADCA Course','💻 DCA Course','🖨 DTP Course','🤖 AI Course — First in Aander!','📊 Tally Prime','⌨ Typing Course','📞 Admission Open: 8809723830']
+};
+function renderMarquee(){
+  const items=[...marqItems[lang],...marqItems[lang]];
+  document.getElementById('marqT').innerHTML=items.map(t=>`<span>${t}</span>`).join('');
+}
+
+/* COURSES */
+function renderCourses(){
+  const g=document.getElementById('cGrid');
+  const hi=lang==='hi';
+  g.innerHTML=courses.map((c,i)=>`
+  <div class="cc sf" style="border-top:4px solid ${cols[i%cols.length]}">
+    <div class="cc-h" style="background:linear-gradient(135deg,${cols[i%cols.length]}18,transparent)">
+      <span class="cc-ic">${c.icon}</span>
+      ${c.badge?`<span class="cc-badge" style="background:${cols[i%cols.length]}">${c.badge}</span>`:''}
+      <div class="cc-nm">${c.name}</div>
+      <div class="cc-sb">${c.sub}</div>
+    </div>
+    <div class="cc-bd">
+      <ul class="cc-ft">
+        <li>${hi?'अवधि':'Duration'}: <strong>${c.dur}</strong></li>
+        <li>${hi?'Certificate मिलेगा':'Certificate Provided'}</li>
+        <li>${hi?'Expert Trainer • Seraj Sir':'Expert Trainer • Seraj Sir'}</li>
+        <li>${hi?'Govt. Recognized Course':'Govt. Recognized Course'}</li>
+      </ul>
+    </div>
+    <div class="cc-fo">
+      <div class="cc-fee">₹${c.fee.toLocaleString('en-IN')}<small>${hi?'कुल फीस':'Total Fee'}</small></div>
+      <div class="cc-acts">
+        <button class="btn-en" onclick="pickCourse('${c.name}')">${hi?'Enroll करें':'Enroll Now'}</button>
+        ${isAdmin?`<button class="btn-dc" onclick="delCourse(${i})">🗑</button>`:''}
+      </div>
+    </div>
+  </div>`).join('');
+  observe();
+}
+
+/* UPDATES */
+function renderUpdates(){
+  const g=document.getElementById('uGrid');
+  g.innerHTML=updates.map((u,i)=>`
+  <div class="uc sf">
+    <span class="u-tag">${u.tag}</span>
+    <div class="u-ti">${u.title[lang]}</div>
+    <div class="u-de">${u.desc[lang]}</div>
+    <div class="u-dt">📅 ${u.date}</div>
+    ${isAdmin?`<button class="btn-du" onclick="delUpdate(${i})">🗑 Delete</button>`:''}
+  </div>`).join('');
+  observe();
+}
+
+/* LANG TEXTS */
+const T={
+  hi:{
+    hBadge:'भारत सरकार द्वारा मान्यता प्राप्त',
+    heroH2:'<span class="t-sf">भारत का</span><br><span class="t-gd">सर्वश्रेष्ठ</span> <span class="t-gn">Computer</span><br>Typing Institute',
+    heroSub:'आन्दर में पहली बार AI का कोर्स! Skill ही असली Degree है। आन्दर के Best Trainer Seraj Sir से Computer सीखें और अपना भविष्य बनाएं।',
+    sl1:'साल का अनुभव',sl2:'Students',sl3:'Courses',
+    hBtn1:'📝 Admission लें',hBtn2:'📚 Courses देखें',
+    cHead1:'हमारे',cHead2:'Courses',cSub:'Professional courses with certificates | Reg. No: 25988',
+    abH2:'हमारे <span>बारे में</span>',abSub:'Seraj Sir और Indian Typing Institute की कहानी',
+    abTH:'जानें हमारे बारे में',
+    abP1:'<strong>Indian Typing Institute</strong> — भारत सरकार द्वारा मान्यता प्राप्त संस्था है, जिसका Reg. No. <strong>25988</strong> है।',
+    abP2:'हमारे Institute में आन्दर के Best Trainer <strong>Seraj Sir</strong> (7 Years Experience) से Computer की पूरी training मिलती है। किताबों से डिग्री मिलेगी, Computer से Job!',
+    abP3:'हमारी कोशिश आपको बेहतर देने के साथ, बेहतरीन बनाना भी है। <strong>कम्प्यूटर ही भविष्य है।</strong>',
+    abAcTxt:'7 साल का अनुभव',
+    af1:'Govt. Recognized',af2:'Expert Trainer',af3:'Valid Certificate',af4:'Job Assistance',af5:'AI Course',af6:'Flexible Timing',
+    upH1:'Latest',upH2:'Updates',upSub:'Important notices & announcements',
+    addNB:'📩 Enquiry करें / More Info',
+    eqH1:'Enquiry',eqH2:'करें',eqSub:'हमें WhatsApp पर directly enquiry करें — तुरंत reply!',
+    lbName:'👤 आपका नाम *',lbPhone:'📱 Mobile Number *',lbCourse:'📚 Course चुनें *',lbMsg:'📝 Message / सवाल',
+    eqOpt0:'-- Course Select करें --',waBtnTxt:'WhatsApp पर Enquiry भेजें',
+    eqNote:'आपकी enquiry सीधे <strong>Seraj Sir</strong> के WhatsApp पर जाएगी',
+    coH1:'संपर्क',coH2:'करें',coSub:'हम आपकी सहायता के लिए हमेशा उपलब्ध हैं',
+    coC1H:'Call / WhatsApp',coC3H:'पता',coC4H:'समय',coTiming:'सोम – शनि: सुबह 9 बजे – शाम 7 बजे',
+    ftGov:'भारत सरकार द्वारा मान्यता प्राप्त',
+    'n-home':'होम','n-courses':'Courses','n-about':'हमारे बारे में','n-updates':'Updates','n-enquiry':'Enquiry','n-contact':'Contact',
+    'mn-home':'🏠 होम','mn-courses':'📚 Courses','mn-about':'ℹ️ हमारे बारे में','mn-updates':'📢 Updates','mn-enquiry':'📝 Enquiry','mn-contact':'📞 Contact',
+    eqMsg:'अपना सवाल यहाँ लिखें...',
+  },
+  en:{
+    hBadge:'Recognized by Government of India',
+    heroH2:'<span class="t-sf">India\'s Best</span><br><span class="t-gd">Computer &</span> <span class="t-gn">Typing</span><br>Institute',
+    heroSub:'First AI Course in Aander! Skill is the real Degree. Learn Computer from the best trainer Seraj Sir and build your future.',
+    sl1:'YEARS EXP.',sl2:'STUDENTS',sl3:'COURSES',
+    hBtn1:'📝 Get Admission',hBtn2:'📚 View Courses',
+    cHead1:'Our',cHead2:'Courses',cSub:'Professional courses with certificates | Reg. No: 25988',
+    abH2:'<span>About</span> Us',abSub:'The story of Seraj Sir and Indian Typing Institute',
+    abTH:'Know About Us',
+    abP1:'<strong>Indian Typing Institute</strong> is recognized by the Government of India with Reg. No. <strong>25988</strong>.',
+    abP2:'Learn Computer from the best trainer <strong>Seraj Sir</strong> (7 Years Experience). Books give degrees, Computers give Jobs!',
+    abP3:'Our goal is not just to make you better, but the best. <strong>Computer is the future.</strong>',
+    abAcTxt:'7 Years Experience',
+    af1:'Govt. Recognized',af2:'Expert Trainer',af3:'Valid Certificate',af4:'Job Assistance',af5:'AI Course',af6:'Flexible Timing',
+    upH1:'Latest',upH2:'Updates',upSub:'Important notices & announcements',
+    addNB:'📩 Enquire Now / More Info',
+    eqH1:'Enquiry',eqH2:'Form',eqSub:'Send us a WhatsApp enquiry directly — instant reply!',
+    lbName:'👤 Your Name *',lbPhone:'📱 Mobile Number *',lbCourse:'📚 Select Course *',lbMsg:'📝 Message / Question',
+    eqOpt0:'-- Select a Course --',waBtnTxt:'Send Enquiry on WhatsApp',
+    eqNote:'Your enquiry will go directly to <strong>Seraj Sir\'s</strong> WhatsApp',
+    coH1:'Contact',coH2:'Us',coSub:'We are always available to help you',
+    coC1H:'Call / WhatsApp',coC3H:'Address',coC4H:'Timing',coTiming:'Mon – Sat: 9 AM – 7 PM',
+    ftGov:'Recognized by Government of India',
+    'n-home':'Home','n-courses':'Courses','n-about':'About Us','n-updates':'Updates','n-enquiry':'Enquiry','n-contact':'Contact',
+    'mn-home':'🏠 Home','mn-courses':'📚 Courses','mn-about':'ℹ️ About Us','mn-updates':'📢 Updates','mn-enquiry':'📝 Enquiry','mn-contact':'📞 Contact',
+    eqMsg:'Write your question here...',
+  }
+};
+
+/* LANG TOGGLE */
+function applyLang(){
+  const t=T[lang];
+  Object.keys(t).forEach(id=>{
+    const el=document.getElementById(id);
+    if(!el) return;
+    if(el.tagName==='INPUT'||el.tagName==='TEXTAREA') el.placeholder=t[id];
+    else el.innerHTML=t[id];
+  });
+  const isEn=lang==='en';
+  document.documentElement.lang=lang;
+  document.body.classList.toggle('lang-en',isEn);
+  const flag=isEn?'🇮🇳':'🇬🇧', lbl=isEn?'हिंदी':'English';
+  ['lFlag','lFlagM'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=flag;});
+  ['lLabel','lLabelM'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=lbl;});
+}
+
+function toggleLang(){
+  lang=lang==='hi'?'en':'hi';
+  applyLang();
+  renderMarquee();
+  renderCourses();
+  renderUpdates();
+  showToast(lang==='en'?'🇬🇧 Switched to English':'🇮🇳 हिंदी में बदला गया','#0E8A16');
+}
+
+/* WHATSAPP */
+function sendWA(){
+  const name=document.getElementById('eqName').value.trim();
+  const phone=document.getElementById('eqPhone').value.trim();
+  const course=document.getElementById('eqCourse').value;
+  const msg=document.getElementById('eqMsg').value.trim();
+  if(!name||!phone||!course){
+    showToast(lang==='hi'?'⚠ नाम, Phone और Course भरें':'⚠ Fill Name, Phone & Course','#dc2626');
+    return;
+  }
+  const text=lang==='hi'
+    ?`नमस्ते! मैं *Indian Typing Institute* में Admission लेना चाहता/चाहती हूँ।%0A%0A*नाम:* ${name}%0A*Mobile:* ${phone}%0A*Course:* ${course}${msg?`%0A*सवाल:* ${msg}`:''}%0A%0APlease guide me. 🙏`
+    :`Hello! I want Admission at *Indian Typing Institute*.%0A%0A*Name:* ${name}%0A*Mobile:* ${phone}%0A*Course:* ${course}${msg?`%0A*Message:* ${msg}`:''}%0A%0APlease guide me. 🙏`;
+  window.open(`https://wa.me/${WA}?text=${text}`,'_blank');
+}
+
+function pickCourse(n){document.getElementById('eqCourse').value=n;goTo('#enquiry');}
+
+/* ADMIN */
+function dToggle(){document.getElementById('drawer').classList.toggle('open');}
+function aLogin(){
+  if(document.getElementById('dPass').value===PASS){
+    isAdmin=true;
+    document.getElementById('dLogin').style.display='none';
+    document.getElementById('dDash').style.display='block';
+    document.body.classList.add('admin-mode');
+    renderCourses();renderUpdates();
+    showToast(lang==='hi'?'✅ Admin Login!':'✅ Admin logged in!','#0E8A16');
+  }else{showToast(lang==='hi'?'❌ गलत Password':'❌ Wrong Password','#dc2626');}
+}
+function aLogout(){
+  isAdmin=false;
+  document.getElementById('dDash').style.display='none';
+  document.getElementById('dLogin').style.display='block';
+  document.getElementById('dPass').value='';
+  document.body.classList.remove('admin-mode');
+  document.getElementById('drawer').classList.remove('open');
+  renderCourses();renderUpdates();
+  showToast(lang==='hi'?'👋 Logout हो गया':'👋 Logged out','#555');
+}
+function addUpdate(){
+  const thi=document.getElementById('dUThi').value.trim();
+  const ten=document.getElementById('dUTen').value.trim();
+  const dhi=document.getElementById('dUDhi').value.trim();
+  const den=document.getElementById('dUDen').value.trim();
+  const tag=document.getElementById('dUTag').value;
+  if(!thi||!dhi){showToast(lang==='hi'?'Hindi fields भरें!':'Fill Hindi fields!','#dc2626');return;}
+  updates.unshift({title:{hi:thi,en:ten||thi},desc:{hi:dhi,en:den||dhi},tag,date:new Date().toLocaleDateString('en-IN',{month:'long',year:'numeric'})});
+  renderUpdates();
+  ['dUThi','dUTen','dUDhi','dUDen'].forEach(id=>document.getElementById(id).value='');
+  showToast(lang==='hi'?'✅ Update जोड़ा गया!':'✅ Update added!','#0E8A16');
+}
+function delUpdate(i){
+  if(confirm(lang==='hi'?'Delete करें?':'Delete this?')){updates.splice(i,1);renderUpdates();showToast(lang==='hi'?'🗑 हटाया गया':'🗑 Deleted','#555');}
+}
+function addCourse(){
+  const n=document.getElementById('dCN').value.trim();
+  const s=document.getElementById('dCS').value.trim();
+  const f=parseInt(document.getElementById('dCF').value)||0;
+  const d=document.getElementById('dCD').value.trim();
+  const ic=document.getElementById('dCI').value||'💻';
+  if(!n||!f){showToast(lang==='hi'?'Name और Fee भरें!':'Fill Name & Fee!','#dc2626');return;}
+  courses.push({name:n,sub:s,fee:f,dur:d,icon:ic,badge:'NEW'});
+  renderCourses();
+  ['dCN','dCS','dCF','dCD'].forEach(id=>document.getElementById(id).value='');
+  showToast(lang==='hi'?'✅ Course जोड़ा गया!':'✅ Course added!','#0E8A16');
+}
+function delCourse(i){
+  if(confirm(lang==='hi'?'Course delete करें?':'Delete this course?')){courses.splice(i,1);renderCourses();showToast('🗑 Deleted','#555');}
+}
+function updContact(){
+  const ph=document.getElementById('dPh').value.trim();
+  const em=document.getElementById('dEm').value.trim();
+  const ad=document.getElementById('dAd').value.trim();
+  const cp=document.getElementById('cPhone');cp.textContent=ph;cp.href='tel:'+ph;
+  const ce=document.getElementById('cEmail');ce.textContent=em;ce.href='mailto:'+em;
+  document.getElementById('cAddr').textContent=ad;
+  document.getElementById('ftAddr').innerHTML=`${ad} | <a href="tel:${ph}">${ph}</a>`;
+  showToast(lang==='hi'?'✅ Contact Update हो गया!':'✅ Contact updated!','#0E8A16');
+}
+
+/* HELPERS */
+function goTo(id){
+  const el=document.querySelector(id);
+  if(el)el.scrollIntoView({behavior:'smooth'});
+  document.getElementById('mNav').classList.remove('open');
+}
+function toggleMob(){document.getElementById('mNav').classList.toggle('open');}
+function showToast(msg,bg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.style.background=bg||'#0E8A16';
+  t.classList.add('show');clearTimeout(t._t);
+  t._t=setTimeout(()=>t.classList.remove('show'),3000);
+}
+function observe(){
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.08});
+  document.querySelectorAll('.sf:not(.in)').forEach(el=>io.observe(el));
+}
+
+/* ACTIVE NAV */
+window.addEventListener('scroll',()=>{
+  const ss=['home','courses','about','updates','enquiry','contact'];
+  let cur='';
+  ss.forEach(id=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-120)cur=id;});
+  document.querySelectorAll('#dNav a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
+},{passive:true});
+
+/* INIT */
+renderMarquee();
+renderCourses();
+renderUpdates();
+observe();
+</script>
+</body>
+</html>
